@@ -1,0 +1,23 @@
+CREATE TABLE `attendence` (
+  `id` int(10) NOT NULL,
+  `date_tm` varchar(30) NOT NULL,
+  `f_half` varchar(20) DEFAULT NULL,
+  `s_half` varchar(30) DEFAULT NULL,
+   PRIMARY KEY (`id`,`date_tm`),
+   FOREIGN KEY (`id`) REFERENCES employee(`id`)
+   
+) ENGINE=MyISAM DEFAULT CHARSET=latin1
+
+
+CREATE TABLE `salary` (
+  `id` int(10) NOT NULL,
+  `hra` decimal(12,2) DEFAULT NULL,
+  `da` decimal(12,2) DEFAULT NULL,
+  `med` decimal(12,2) DEFAULT NULL,
+  `pf` decimal(12,2) DEFAULT NULL,
+  `basic_salary` decimal(12,2) NOT NULL,
+   PRIMARY KEY (`id`),
+   FOREIGN KEY (`id`) REFERENCES employee(`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1
+
+
